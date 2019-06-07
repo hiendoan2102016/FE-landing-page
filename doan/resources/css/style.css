@@ -1,0 +1,327 @@
+/*			bắt đầu với CSS nào!			*/
+
+/*			defause setup			*/
+
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+/*-----------chỉnh sửa toàn bộ html về 1 dạng duy nhất -------*/
+html{
+	font-family: 'Lato',sans-serif;
+	font-size: 20px;
+	color: #5a5a5a;
+	background-color: #ffffff;
+	text-rendering: optimizeLegibility; /*cách hiển thị tốt nhất trên webside*/
+	/*mặc định là 16px;*/
+}
+
+/*------------ REUSABLE COMPOMENT (SỬ DỤNG NHIỀU) ----------*/
+/*-------------chỉnh sửa tell me more và join us----------*/
+.btn{
+	text-decoration: none;
+	padding: 15px 25px;
+	margin-top: 20px;
+	margin-bottom:50px;
+	color: white;
+	background-color: tomato;
+	border-radius: 20px;
+	margin: 0 20px;
+	width: 190px;
+	display: inline-block;
+	text-align: center;
+	transition: all .3s;
+	margin-left: -20px;
+}
+/*-----------thuộc tính click và di chuyệt thì có hiệu ứng----*/
+.btn:hover,
+.btn:active{
+	background-color: #d35400;
+	color: blue;
+}
+/*công thức thần thánh tác các phần ra nếu chung bị chung thuộc tính*/
+
+.clearfix::after{
+	content: " ";
+	display: table;
+	clear: both;
+}
+
+.row{
+	max-width: 1140px;
+	margin: 0 auto;
+}
+h1, h2, h3{
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+h1{
+	font: 500%;
+	font-weight: 500;
+	word-spacing: 10px;
+	color: white;
+	line-height:130%;
+	margin-bottom: 10px;
+	margin-top: 100px;
+}
+h2{
+	color: tomato;
+	font-size: 180%;
+	font-weight: 700;
+	text-align: center;
+}
+h2:after{
+	content: " ";
+	display: block;
+	width: 150px;
+	height: 2px;
+	background-color: tomato;
+	margin: 0 auto;
+	margin-top: 4px;
+}
+h3{
+	padding-top: 30px;
+	padding-bottom: 10px;
+	background-color: #76737d;
+	color: white;
+	text-align: center;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+}
+.p-long{
+	text-align: center;
+	color: white;
+	font-size: 22px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	width: 70%;
+	margin-left: 15%;
+}
+section{
+	padding: 50px;
+}
+/*				HEADER				*/
+
+header{
+	/* thuộc tính làm màu nhạt dần theo 1 chiều nào đó */
+	background-image: linear-gradient(rgba(2,33,64,0.6),rgba(255,255,255,0.6)), url("../img/background1.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 100vh;/*view-height*/
+	background-attachment: fixed;
+}
+.logo{
+	width: 400px;
+	float: left;
+	margin: 30px;
+}
+
+.main-nav{
+	float: right;
+	list-style-type: none;
+}
+.main-nav li a{
+	text-decoration: none;
+	color: white;
+	font-size: 110%;
+	font-weight: 100px;
+	transition: border-bottom 0.5s;
+	padding: 0 3px;
+}
+.main-nav li{
+
+	display: inline-block;
+	margin-right: 50px;
+	margin-top: 40px;
+}
+
+/*thuộc tính di chuột vào thì hiển thị dấu gạch ngang*/
+.main-nav li a:hover,
+.main-nav li a:active{
+	border-bottom: 2px solid #cccccc;
+
+}
+
+.heading-main-box{
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	/*căn văn bản ở giữa màn hình*/
+	transform: translate(-45%, -50%);
+	width: 1140px;
+}
+
+/*------------------ABOUT SECTION------------*/
+.img-about{
+	position: relative;
+	margin-top: 50px;
+}
+.about-section{
+	/* thuộc tính làm màu nhạt dần theo 1 chiều nào đó */
+	background-image: linear-gradient(rgba(2,33,64,0.6),rgba(255,255,255,0.6)), url("../img/messine.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+/*----------làm ảnh tròn và có bóng mờ xung quanh-------*/
+.img-about img{
+	width: 90%;
+	border-radius: 30px;
+	border: 4px solid white;
+	box-shadow:2px 2px 10px 5px #265077 ;
+	transition: all .8s;
+/*box-shadow:	x - y - độ mờ - độ phóng rộng - màu;*/
+/*	filter: brightness(100%) blur(2px);*/
+/*-------thuộc tính làm rõ ảnh và làm mờ ảnh--------*/
+}
+/*---------đưa chữ vào giữa ảnh--------*/
+.img-title{
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: black;
+	font-size: 22px;
+	transform: translate(-65%,80%);
+	opacity: 0;
+	transition: all .8s;
+}
+
+
+/*---------thuộc tính di chuột làm thay đôi -------*/
+.img-about:hover img,
+.img-about:active img{
+	filter: brightness(100%) blur(2px);
+}
+.img-about:hover .img-title,
+.img-about:active .img-title{
+	transform: translate(-65%,-50%);
+	opacity: 1;
+}
+
+/*---------------------CSS to Product-------------------*/
+
+.product-section{
+	background-color: #f5f5f5;
+	/* thuộc tính làm màu nhạt dần theo 1 chiều nào đó */
+	background-image: linear-gradient(rgba(2,33,64,0.6),rgba(255,255,255,0.6)), url("../img/rmr.jpg");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.product-box{
+	box-shadow: 3px 5px 10px;
+	width: 90%;
+	height: 300px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+.product-price{
+	color: #265077;
+	font-size: 160%;
+	text-align: center;
+}
+.product-box ul li{
+	margin-left: 20%;
+	list-style-type: none;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: rgb(141, 157, 218);
+}
+.small-icon{
+	font-size: 120%;
+}
+.product-box .btn{
+	margin-left: 70px;
+}
+
+/*---------------CSS product 2------------*/
+
+.product-section-2{
+	/* thuộc tính làm màu nhạt dần theo 1 chiều nào đó */
+	background-image: linear-gradient(rgba(2,33,64,0.7),rgba(255,255,255,0.3)), url("../img/fifa4.png");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.product-section-2 h2{
+	margin-bottom: 50px;
+}
+blockquote{
+	font-style: italic;
+	color: white;
+	line-height: 120%;
+	word-spacing: 120%;
+}
+blockquote:before{
+	content: '\201C';
+	display: block;
+	font-size: 350%;
+	left: 2px;
+}
+cite{
+	display: block;
+	color: red;
+	text-align: center;
+	margin-top: 20px;
+}
+cite img{
+	height: 80px;
+	border-radius: 30%;
+	border: 2px solid #250677;
+	margin-left: 30%;
+}
+img{
+	display: block;
+}
+
+/* ---------------- top premier league------------ */
+
+.topPremier-section{
+	background-color: #c7c4cf;
+	background-image: linear-gradient(rgba(2,33,64,0.6),rgba(255,255,255,0.1)), url("../img/logo2.png");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.topPremier-section h2{
+	margin-bottom: 50px;
+}
+
+.showCase{
+	margin-left: 20%;
+}
+
+.showCase li{
+	list-style:none;
+	float: left;
+	width: 30%;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+
+figcaption{
+	margin-top: 10%;
+	color: #265077;
+	margin-right: 35%;
+	font-weight: 500;
+	font-size: 110%;
+}
+
+.logo-club{
+	width: 180px;
+	cursor: pointer;
+	transition: all 0.7s ease;
+}
+.showCase li .logo-club:hover,
+.showCase li .logo-club:active{
+	transform: scale(1.1)
+}
+.clubs{
+	height: 180px;
+	width: 160px;
+	cursor: pointer;
+}
